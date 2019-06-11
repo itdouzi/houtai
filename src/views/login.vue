@@ -25,8 +25,8 @@ export default {
         return {
             logining: false,
             loginForm: {
-                account: 'admin',
-                password: '123456'
+                account: '',
+                password: ''
             },
             fieldRules: {
                 account: [
