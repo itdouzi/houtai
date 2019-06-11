@@ -13,14 +13,14 @@
     name: 'Login',
     methods: {
       login() {
-        this.$api.login().then(function(res) {
+        this.$api.login().then((res)=> {
 
             console.log(res);
             
 　　　　　　alert(res.data.token)
             Cookies.set('token', res.data.token) // 放置token到Cookie 
             router.push('/')  // 登录成功，跳转到主页
-          }).catch(function(res) {
+          }).catch((res)=> {
             alert(res);
           });
           

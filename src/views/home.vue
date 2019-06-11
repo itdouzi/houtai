@@ -14,23 +14,23 @@ export default {
     name: 'Home',
     methods:{
         testAxios(){
-            axios.get('http://localhost:8081').then(function(res){
+            axios.get('http://localhost:8081').then((res)=>{
                 alert(res.data)
-            }).catch(function(res){
+            }).catch((res)=>{
                 alert(res)
             });
         },
         getUser(){
-            axios.get('http://localhost:8081/user').then(function(res){
+            axios.get('http://localhost:8081/user').then((res)=>{
                 alert(JSON.stringify(res.data))
-            }).catch(function(res){
+            }).catch((res)=>{
                 alert(res)
             });
         },
         getMenu(){
-            axios.get('http://localhost:8081/menu').then(function(res){
+            axios.get('http://localhost:8081/menu').then((res)=>{
                 alert(JSON.stringify(res.data))
-            }).catch(function(res){
+            }).catch((res)=>{
                 alert(res)
             });
         },
