@@ -14,21 +14,21 @@ export default {
     name: 'Home',
     methods:{
         testAxios(){
-            axios.get('http://localhost:8086').then(function(res){
+            axios.get('http://localhost:8081').then(function(res){
                 alert(res.data)
             }).catch(function(res){
                 alert(res)
             });
         },
         getUser(){
-            axios.get('http://localhost:8086/user').then(function(res){
+            axios.get('http://localhost:8081/user').then(function(res){
                 alert(JSON.stringify(res.data))
             }).catch(function(res){
                 alert(res)
             });
         },
         getMenu(){
-            axios.get('http://localhost:8086/menu').then(function(res){
+            axios.get('http://localhost:8081/menu').then(function(res){
                 alert(JSON.stringify(res.data))
             }).catch(function(res){
                 alert(res)
