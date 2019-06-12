@@ -23,11 +23,11 @@ const router = new Router({
       component: Home,
       children:[
         {path:'',component:Welcome,name:'欢迎页面'}, //登录进去就加载此页
-        {path:'/user',component:User,name:'用户管理'},
-        {path:'/menu',component:Menu,name:'菜单管理'},
-        {path:'/role',component:Role,name:'角色管理'},
-        {path:'/log',component:Log,name:'日志管理'},
-        {path:'/dept',component:Dept,name:'机构管理'},
+        {path:'sys/user',component:User,name:'用户管理'},
+        {path:'sys/menu',component:Menu,name:'菜单管理'},
+        {path:'sys/role',component:Role,name:'角色管理'},
+        {path:'sys/log',component:Log,name:'日志管理'},
+        {path:'sys/dept',component:Dept,name:'机构管理'},
 
       ]
     },

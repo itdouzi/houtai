@@ -1,50 +1,30 @@
 <template>
-  <div @click="getStoreState">
+  <div class="menu-container" @click="getStoreState">
       <!-- 导航菜单 -->
-      <el-menu default-active="1-1" @open="handleopen" @close="handleclose" @select="handleselect" class="menu-container">
-
-        <el-submenu index="1">
-          <template slot="title">
-            <i class="el-icon-location"></i>
-            <span slot="title">系统管理</span>
-          </template>
-          <el-menu-item index="1-1" @click="$router.push('user')">用户管理</el-menu-item>
-          <el-menu-item index="1-2" @click="$router.push('dept')">机构管理</el-menu-item>
-          <el-menu-item index="1-3" @click="$router.push('role')">角色管理</el-menu-item>
-          <el-menu-item index="1-4" @click="$router.push('menu')">菜单管理</el-menu-item>
-          <el-menu-item index="1-5" @click="$router.push('log')">日志管理</el-menu-item>
-        </el-submenu>
-
-        <el-menu-item index="2">
-          <i class="el-icon-view"></i>
-          <span slot="title">系统监控</span>
-        </el-menu-item>
-
-        <el-menu-item index="3" disabled>
-          <i class="el-icon-document"></i>
-          <span slot="title">导航三</span>
-        </el-menu-item>
-
-        <el-menu-item index="4">
-          <i class="el-icon-setting"></i>
-          <span slot="title">导航四</span>
-        </el-menu-item>
+      <el-menu default-active="1" @open="handleopen" @close="handleclose" @select="handleselect" class="menu-content">
+        <!-- 导航菜单树组件，动态加载菜单 -->
+        <menu-tree v-for="item in navTree" :key="item.id" :menu="item"></menu-tree>
       </el-menu>
   </div>
 </template>
 
 <script>
 import { mapState } from 'vuex'
+import MenuTree from "@/components/MenuTree/MenuTree"
 export default {
   data() {
     return {
 
     };
   },
+  components:{
+    MenuTree
+  },
   computed:{
     ...mapState({
       // appName:state=>state.app.appName,
       collapse:state=>state.app.collapse,
+      navTree:state=>state.menu.navTree,
     })
   },
   methods: {
@@ -61,9 +41,19 @@ export default {
       console.log(this.collapse)
       console.log('点击获取store的数据collapse(...mapState里面的collapse)')
     },
+    findMenuTree(){
+      console.log('菜单初始化了')
+      console.log(this.$api.menu)
+      this.$api.menu.findNavTree()
+      .then((res)=>{
+        this.$store.commit('setNavTree',res.data)
+      }).catch((res)=>{
+        alert(res)
+      });
+    },
   },
   mounted() {
-
+    this.findMenuTree()
   }
 };
 </script>
@@ -74,10 +64,13 @@ export default {
     min-width: 200px;
     background-color: #fff;
     height: calc(100vh - 61px);
-    float:left;
-    overflow:hidden;
-    padding-bottom:9999px; 
-    margin-bottom:-9999px;
-    border: none;
+    overflow-y:auto;
+    .menu-content{
+      width: 100%;
+      height: 100%;
+      float:left;
+      border: none;
+    }
+    
 }
 </style>
