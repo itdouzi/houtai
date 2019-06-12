@@ -1,44 +1,35 @@
 <template>
-    <div>
-        <h2>home</h2>
-        <el-button type="primary" @click="testAxios()">测试axios调用</el-button>
-        <el-button type="primary" @click="getUser()">获取用户信息</el-button>
-        <el-button type="primary" @click="getMenu()">获取菜单信息</el-button>
-    </div>
+
+  <el-container class="is-vertical">
+    <!-- 头部区域 -->
+    <HeadBar></HeadBar>
+    <el-container>
+      <!-- 导航菜单栏 -->
+      <MenuBar></MenuBar>
+      <!-- 主内容区域 -->
+      <Main></Main>
+    </el-container>
+  </el-container>
+
 </template>
 <script>
-// import func from '../../vue-temp/vue-editor-bridge';
-import axios from 'axios'
-import mock from '@/mock/index.js';
+import HeadBar from "./HeadBar/HeadBar"
+import MenuBar from "./MenuBar/MenuBar"
+import Main from "./Main/Main"
 export default {
-    name: 'Home',
-    methods:{
-        testAxios(){
-            axios.get('http://localhost:8081').then((res)=>{
-                alert(res.data)
-            }).catch((res)=>{
-                alert(res)
-            });
-        },
-        getUser(){
-            axios.get('http://localhost:8081/user').then((res)=>{
-                alert(JSON.stringify(res.data))
-            }).catch((res)=>{
-                alert(res)
-            });
-        },
-        getMenu(){
-            axios.get('http://localhost:8081/menu').then((res)=>{
-                alert(JSON.stringify(res.data))
-            }).catch((res)=>{
-                alert(res)
-            });
-        },
-    }
-}
+  components:{
+        HeadBar,
+        MenuBar,
+        Main
+  }
+};
 </script>
 <style lang="scss" scoped>
-
+.el-container{
+  &.is-vertical{
+    min-width: 1200px;
+  }
+}
 </style>
 
 
