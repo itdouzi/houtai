@@ -34,11 +34,18 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
   data() {
     return {
 
     };
+  },
+  computed:{
+    ...mapState({
+      // appName:state=>state.app.appName,
+      collapse:state=>state.app.collapse,
+    })
   },
   methods: {
     handleopen() {
@@ -51,8 +58,8 @@ export default {
       console.log('handleselect');
     },
     getStoreState(){
-      console.log(this.$store.state.app.collapse)
-      console.log('点击获取store的数据collapse')
+      console.log(this.collapse)
+      console.log('点击获取store的数据collapse(...mapState里面的collapse)')
     },
   },
   mounted() {
