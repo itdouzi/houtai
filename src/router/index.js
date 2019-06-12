@@ -1,9 +1,16 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Cookies from "js-cookie"
-import Login from '@/views/login'
-import Home from '@/views/home'
+import Login from '@/views/Login'
+import Home from '@/views/Home'
 import NotFound from '@/views/404'
+
+import Welcome from '@/views/Welcome/Welcome'
+import User from '@/views/SysMng/User'
+import Menu from '@/views/SysMng/Menu'
+import Log from '@/views/SysMng/Log'
+import Role from '@/views/SysMng/Role'
+import Dept from '@/views/SysMng/Dept'
 
 Vue.use(Router)
 
@@ -13,7 +20,16 @@ const router = new Router({
     {
       path: '/',
       name: 'Home',
-      component: Home
+      component: Home,
+      children:[
+        {path:'',component:Welcome,name:'欢迎页面'}, //登录进去就加载此页
+        {path:'/user',component:User,name:'用户管理'},
+        {path:'/menu',component:Menu,name:'菜单管理'},
+        {path:'/role',component:Role,name:'角色管理'},
+        {path:'/log',component:Log,name:'日志管理'},
+        {path:'/dept',component:Dept,name:'机构管理'},
+
+      ]
     },
     {
       path: '/login',

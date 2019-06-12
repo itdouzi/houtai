@@ -10,12 +10,12 @@
         <el-menu-item index="1-1" @click="$router.push('user')">用户管理</el-menu-item>
         <el-menu-item index="1-2" @click="$router.push('dept')">机构管理</el-menu-item>
         <el-menu-item index="1-3" @click="$router.push('role')">角色管理</el-menu-item>
-        <el-menu-item index="1-4" @click="$router.push('menu')">菜单管理</el-menu-item>
+        <el-menu-item index="1-2" @click="$router.push('menu')">菜单管理</el-menu-item>
         <el-menu-item index="1-5" @click="$router.push('log')">日志管理</el-menu-item>
       </el-submenu>
 
       <el-menu-item index="2">
-        <i class="el-icon-location"></i>
+        <i class="el-icon-view"></i>
         <span slot="title">系统监控</span>
       </el-menu-item>
 
@@ -66,6 +66,5 @@ export default {
     padding-bottom:9999px; 
     margin-bottom:-9999px;
     border: none;
-  
 }
 </style>

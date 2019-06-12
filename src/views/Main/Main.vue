@@ -1,14 +1,13 @@
 <template>
   <div class="main-container">
-    Main</br>
-    Main</br>
-    Main</br>
-    Main</br>
-    Main</br>
-    Main</br>
-    Main</br>
-
-    Main</br>
+    <!-- 主内容区域 -->
+    <div class="main-content">
+      <keep-alive>
+        <transition name="fade" mode="out-in">
+            <router-view></router-view>
+        </transition>
+      </keep-alive>
+    </div>
   </div>
 </template>
 
@@ -34,5 +33,12 @@ export default {
     height: calc(100vh - 61px);
     float:right; 
     height:auto;
+    div{
+      text-align: center;
+      color: #333;
+      h2{
+        font-size: 80px;
+      }
+    }
 }
 </style>
