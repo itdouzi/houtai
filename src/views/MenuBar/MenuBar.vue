@@ -1,7 +1,7 @@
 <template>
   <div class="menu-container" @click="getStoreState">
       <!-- 导航菜单 -->
-      <el-menu default-active="1" @open="handleopen" @close="handleclose" @select="handleselect" class="menu-content">
+      <el-menu @open="handleopen" @close="handleclose" @select="handleselect" :unique-opened="true" class="menu-content">
         <!-- 导航菜单树组件，动态加载菜单 -->
         <menu-tree v-for="item in navTree" :key="item.id" :menu="item"></menu-tree>
       </el-menu>
