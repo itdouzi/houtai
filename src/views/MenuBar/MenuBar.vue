@@ -1,7 +1,15 @@
 <template>
   <div class="menu-container" @click="getStoreState">
       <!-- 导航菜单 -->
-      <el-menu @open="handleopen" @close="handleclose" @select="handleselect" :unique-opened="true" class="menu-content">
+      <el-menu 
+        :default-active="$route.path" 
+        @open="handleopen" 
+        @close="handleclose" 
+        @select="handleselect" 
+        :unique-opened="true" 
+        class="menu-content"
+        router
+      >
         <!-- 导航菜单树组件，动态加载菜单 -->
         <menu-tree v-for="item in navTree" :key="item.id" :menu="item"></menu-tree>
       </el-menu>
@@ -53,6 +61,7 @@ export default {
     },
   },
   mounted() {
+    console.log(this.$router.path)
     this.findMenuTree()
   }
 };
