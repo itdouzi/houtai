@@ -167,7 +167,7 @@ export function findNavTree() {
         "lastUpdateTime": "2018-12-27T03:03:53.000+0000",
         "parentId": 43,
         "name": "服务监控",
-        "path": "http://139.196.87.48:8000/",
+        "path": "/monitorMng/monitorMng",
         "perms": "",
         "type": 1,
         "icon": "el-icon-view",

@@ -76,7 +76,7 @@ mounted() {
     color: #fff;
     .logo-warp {
         width: 18%;
-        min-width: 200px;
+        -min-width: 200px;
         float: left;
         .logo {
             float: left;

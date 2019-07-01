@@ -6,7 +6,7 @@
         @open="handleopen" 
         @close="handleclose" 
         @select="handleselect" 
-        :unique-opened="true" 
+        unique-opened
         class="menu-content"
         router
       >
@@ -70,7 +70,7 @@ export default {
 <style scoped lang="scss">
 .menu-container{
     width: 18%;
-    min-width: 200px;
+    -min-width: 200px;
     background-color: #fff;
     height: calc(100vh - 61px);
     overflow-y:auto;

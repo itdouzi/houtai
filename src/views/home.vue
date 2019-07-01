@@ -27,7 +27,7 @@ export default {
 <style lang="scss" scoped>
 .el-container{
   &.is-vertical{
-    min-width: 1200px;
+    // -min-width: 1200px;
   }
 }
 </style>

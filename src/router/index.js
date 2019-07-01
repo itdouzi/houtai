@@ -6,11 +6,11 @@ import Home from '@/views/Home'
 import NotFound from '@/views/404'
 
 import Welcome from '@/views/Welcome/Welcome'
-import User from '@/views/SysMng/User'
-import Menu from '@/views/SysMng/Menu'
-import Log from '@/views/SysMng/Log'
-import Role from '@/views/SysMng/Role'
-import Dept from '@/views/SysMng/Dept'
+import User from '@/views/Sys/User'
+import Menu from '@/views/Sys/Menu'
+import Log from '@/views/Sys/Log'
+import Role from '@/views/Sys/Role'
+import Dept from '@/views/Sys/Dept'
 
 Vue.use(Router)
 
