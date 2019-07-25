@@ -37,17 +37,21 @@ export default {
   },
   methods: {
     handleopen() {
-      console.log('handleopen');
+      console.log('handleopen-菜单打开');
     },
     handleclose() {
-      console.log('handleclose');
+      console.log('handleclose-菜单关闭');
     },
     handleselect(a, b) {
-      console.log('handleselect');
+      console.log('handleselect-菜单切换');
+      console.log(a); // /sys/user
+      console.log(b); // ["/sys", "/sys/user"] 一级菜单/二级菜单
+      
+      
     },
     getStoreState(){
-      console.log(this.collapse)
-      console.log('点击获取store的数据collapse(...mapState里面的collapse)')
+      // console.log(this.collapse)
+      // console.log('点击获取store的数据collapse(...mapState里面的collapse)')
     },
     findMenuTree(){
       console.log('菜单初始化了')

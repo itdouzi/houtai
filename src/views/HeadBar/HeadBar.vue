@@ -14,14 +14,16 @@
             active-text-color="#ffd04b"
             mode="horizontal"
             background-color="#545c64"
-            @select="selectNavBar()"
+            @select="selectNavBar"
         >
             <el-menu-item index="1" @click="$router.push('/')">
             <i class="fa fa-home fa-lg"></i>home
             </el-menu-item>
-            <el-menu-item index="2" @click="openWindow('')">项目</el-menu-item>
-            <el-menu-item index="3" @click="openWindow('')">文档</el-menu-item>
-            <el-menu-item index="4" @click="openWindow('')">博客</el-menu-item>
+            <el-menu-item index="2" @click="openWindow('/header/project')">项目
+            
+            </el-menu-item>
+            <el-menu-item index="3" @click="openWindow('/header/doc')">文档</el-menu-item>
+            <el-menu-item index="4" @click="openWindow('/header/blog')">博客</el-menu-item>
         </el-menu>
     </div>
     <div class="center-warp">
@@ -53,7 +55,9 @@ methods: {
         // window.open(url)
     },
     selectNavBar(key, keyPath) {
-        console.log(key, keyPath);
+        console.log('header菜单切换');
+        console.log(key);  // 2
+        console.log(keyPath);  // ["2"]
     },
     collapse(){
         this.$store.commit('collapse');
